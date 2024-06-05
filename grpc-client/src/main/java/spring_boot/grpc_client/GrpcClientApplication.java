@@ -24,6 +24,7 @@ public class GrpcClientApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		System.out.println("GrpcClientApplication running.");
 		GrpcClientService grpcClientService = appContext.getBean(GrpcClientService.class);
+
 		grpcClientService.sendMessage("Uzumaki Naruto");
 
 		System.out.println();

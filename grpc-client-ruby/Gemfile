@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+ruby '2.6.6'
+
+gem 'byebug'
+gem 'grpc', '~> 1.58'
+gem 'grpc-tools', '~> 1.58'

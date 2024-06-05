@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "spring_boot.grpc";
+option java_outer_classname = "GreetProto";
+
+package greet;
+
+// The greeting service definition.
+service GreetService {
+  // Sends a greeting
+  rpc SayHello (GreetRequest) returns (GreetResponse);
+  rpc SayHelloManyTimes (GreetRequest) returns (stream GreetResponse);
+  rpc SayHelloAllAtOnce (stream GreetRequest) returns (GreetResponse);
+  rpc sayHelloOneByOne (stream GreetRequest) returns (stream GreetResponse);
+}
+
+// The request message containing the user's name.
+message GreetRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message GreetResponse {
+  string message = 1;
+}

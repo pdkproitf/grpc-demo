@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: grpc-server
+grpc:
+  server:
+    port: 9090
+    enabled: true
+    ssl:
+      enabled: false

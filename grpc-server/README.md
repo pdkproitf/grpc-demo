@@ -1,4 +1,4 @@
-# This is grpc server.
+# This is grpc JAVA server.
 
 ### How to run it:
 1. gradle clean `./gradlew clean`

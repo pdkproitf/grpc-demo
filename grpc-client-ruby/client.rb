@@ -65,6 +65,7 @@ def send_many_times_and_receive_many_times(server_stub)
     end
   end
 
+  # server_stub.say_hello_one_by_one(messages, metadata: { 'authorization' => 'valid-token' }).each do |response|
   server_stub.say_hello_one_by_one(messages).each do |response|
     puts "[send_many_times_and_receive_many_times] Receive Response: #{response.message}"
   end
@@ -74,9 +75,9 @@ end
 
 def main
   server_stub = Greet::GreetService::Stub.new('localhost:9090', :this_channel_is_insecure)
-  send_message(server_stub)
-  send_once_and_receive_many_times(server_stub)
-  send_many_times_and_receive_once(server_stub)
+  # send_message(server_stub)
+  # send_once_and_receive_many_times(server_stub)
+  # send_many_times_and_receive_once(server_stub)
   send_many_times_and_receive_many_times(server_stub)
 end
 

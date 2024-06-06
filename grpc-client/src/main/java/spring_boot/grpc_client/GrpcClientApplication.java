@@ -27,13 +27,13 @@ public class GrpcClientApplication implements CommandLineRunner {
 
 		grpcClientService.sendMessage("Uzumaki Naruto");
 
-		System.out.println();
-		grpcClientService.sendOnceAndReceiveManyTimes("Kakashi Hatake");
-
-		System.out.println();
-		grpcClientService.sendManyAndReceiveOnce("Sasuke Uchiha", "Uchiha Itachi", "Hinata Hyuga", "Uchiha Shisui", "Sakura Haruno");
-
-		System.out.println();
-		grpcClientService.sendManyAndReceiveMany("Pain", "Konan", "Obito Uchiha", "Madara Uchiha", "Kaguya Otsutsuki");
+//		System.out.println();
+//		grpcClientService.sendOnceAndReceiveManyTimes("Kakashi Hatake");
+//
+//		System.out.println();
+//		grpcClientService.sendManyAndReceiveOnce("Sasuke Uchiha", "Uchiha Itachi", "Hinata Hyuga", "Uchiha Shisui", "Sakura Haruno");
+//
+//		System.out.println();
+//		grpcClientService.sendManyAndReceiveMany("Pain", "Konan", "Obito Uchiha", "Madara Uchiha", "Kaguya Otsutsuki");
 	}
 }

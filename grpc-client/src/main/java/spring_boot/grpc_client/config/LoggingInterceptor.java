@@ -10,16 +10,17 @@ public class LoggingInterceptor implements ClientInterceptor {
 		return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
 			@Override
 			public void sendMessage(ReqT message) {
-				System.out.println("Send request message: " + message);
+//				System.out.println("Send request message: " + message);
 				super.sendMessage(message);
 			}
 
 			@Override
 			public void start(Listener<RespT> responseListener, Metadata headers) {
+				headers.put(Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER), "valid-token");
 				super.start(new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(responseListener) {
 					@Override
 					public void onMessage(RespT message) {
-						System.out.println("Receive response message: " + message);
+//						System.out.println("Receive response message: " + message);
 						super.onMessage(message);
 					}
 				}, headers);
